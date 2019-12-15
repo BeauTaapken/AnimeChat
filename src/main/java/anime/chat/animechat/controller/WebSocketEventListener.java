@@ -32,7 +32,7 @@ public class WebSocketEventListener {
             logger.info("User Disconnected: " + username);
 
             ///TODO change feed to disconnected image
-            ChatMessage chatMessage = new ChatMessage();
+            ChatMessage chatMessage = new ChatMessage("This will be an disconnected image", "", username);
 //            chatMessage.setSender(username);
 
             messagingTemplate.convertAndSend("/topic/camera", chatMessage);
