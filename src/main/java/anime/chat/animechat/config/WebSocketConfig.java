@@ -13,7 +13,7 @@ import org.springframework.web.socket.config.annotation.WebSocketTransportRegist
 public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry){
-        registry.addEndpoint("/camera").setAllowedOrigins("*").withSockJS();
+        registry.addEndpoint("/chat").setAllowedOrigins("*").withSockJS();
     }
 
     @Override

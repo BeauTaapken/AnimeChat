@@ -1,25 +1,22 @@
 package anime.chat.animechat.model;
 
 public class ChatMessage {
+    private MessageType type;
     private String content;
-    private String audio;
     private String sender;
 
-    /**
-     * Used for normal use
-     */
-//    public ChatMessage(){};
+    public enum MessageType {
+        CHAT,
+        JOIN,
+        LEAVE,
+    }
 
-    /**
-     * Used in tests
-     * @param content This is the content that needs to be send(video)
-     * @param audio This is the audio that needs to be send(might be mixed with video in the future
-     * @param sender This is the name of the sender(username of user)
-     */
-    public ChatMessage(String content, String audio, String sender){
-        this.content = content;
-        this.audio = audio;
-        this.sender = sender;
+    public MessageType getType() {
+        return type;
+    }
+
+    public void setType(MessageType type){
+        this.type = type;
     }
 
     public String getContent(){
@@ -28,14 +25,6 @@ public class ChatMessage {
 
     public void setContent(String content){
         this.content = content;
-    }
-
-    public String getAudio(){
-        return audio;
-    }
-
-    public void setAudio(String audio){
-        this.audio = audio;
     }
 
     public String getSender(){

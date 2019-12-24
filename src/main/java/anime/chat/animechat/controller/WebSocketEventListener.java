@@ -1,6 +1,6 @@
 package anime.chat.animechat.controller;
 
-import anime.chat.animechat.model.ChatMessage;
+import anime.chat.animechat.model.VideoMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,10 +32,10 @@ public class WebSocketEventListener {
             logger.info("User Disconnected: " + username);
 
             ///TODO change feed to disconnected image
-            ChatMessage chatMessage = new ChatMessage("This will be an disconnected image", "", username);
+            VideoMessage videoMessage = new VideoMessage("This will be an disconnected image", "", username);
 //            chatMessage.setSender(username);
 
-            messagingTemplate.convertAndSend("/topic/camera", chatMessage);
+            messagingTemplate.convertAndSend("/topic/camera", videoMessage);
         }
     }
 }
