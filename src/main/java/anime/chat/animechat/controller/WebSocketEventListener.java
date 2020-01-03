@@ -1,6 +1,6 @@
 package anime.chat.animechat.controller;
 
-import anime.chat.animechat.model.VideoMessage;
+import anime.chat.animechat.model.ChatMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +10,8 @@ import org.springframework.messaging.simp.stomp.StompHeaderAccessor;
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.messaging.SessionConnectedEvent;
 import org.springframework.web.socket.messaging.SessionDisconnectEvent;
+
+import java.text.MessageFormat;
 
 @Component
 public class WebSocketEventListener {
@@ -29,13 +31,15 @@ public class WebSocketEventListener {
 
         String username = (String) headerAccessor.getSessionAttributes().get("username");
         if(username != null){
-            logger.info("User Disconnected: " + username);
+            if(logger.isInfoEnabled()){
+                logger.info(MessageFormat.format("User Disconnected: {0}", username));
+            }
 
-            ///TODO change feed to disconnected image
-            VideoMessage videoMessage = new VideoMessage("This will be an disconnected image", "", username);
-//            chatMessage.setSender(username);
+            ChatMessage chatMessage = new ChatMessage();
+            chatMessage.setType(ChatMessage.MessageType.LEAVE);
+            chatMessage.setSender(username);
 
-            messagingTemplate.convertAndSend("/topic/camera", videoMessage);
+            messagingTemplate.convertAndSend("/topic/textchat", chatMessage);
         }
     }
 }

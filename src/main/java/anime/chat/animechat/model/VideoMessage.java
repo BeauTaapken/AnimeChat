@@ -6,11 +6,6 @@ public class VideoMessage {
     private String sender;
 
     /**
-     * Used for normal use
-     */
-//    public ChatMessage(){};
-
-    /**
      * Used in tests
      * @param content This is the content that needs to be send(video)
      * @param audio This is the audio that needs to be send(might be mixed with video in the future

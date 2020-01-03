@@ -22,6 +22,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
         registry.enableSimpleBroker("/topic");
     }
 
+    @Override
     public void configureWebSocketTransport(WebSocketTransportRegistration registration) {
         registration.setMessageSizeLimit(500 * 1024);
         registration.setSendBufferSizeLimit(1024 * 1024);

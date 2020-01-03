@@ -1,0 +1,7 @@
+anime\chat\animechat\config\WebSocketConfig.class
+anime\chat\animechat\model\ChatMessage.class
+anime\chat\animechat\AnimechatApplication.class
+anime\chat\animechat\model\VideoMessage.class
+anime\chat\animechat\controller\ChatController.class
+anime\chat\animechat\controller\WebSocketEventListener.class
+anime\chat\animechat\model\ChatMessage$MessageType.class

@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: anime.chat.animechat.AnimechatApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.256 s - in anime.chat.animechat.AnimechatApplicationTests
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.372 s - in anime.chat.animechat.AnimechatApplicationTests
