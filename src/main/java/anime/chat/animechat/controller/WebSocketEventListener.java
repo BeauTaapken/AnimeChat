@@ -11,6 +11,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.socket.messaging.SessionConnectedEvent;
 import org.springframework.web.socket.messaging.SessionDisconnectEvent;
 
+import java.text.MessageFormat;
+
 @Component
 public class WebSocketEventListener {
     private static final Logger logger = LoggerFactory.getLogger(WebSocketEventListener.class);
@@ -29,13 +31,15 @@ public class WebSocketEventListener {
 
         String username = (String) headerAccessor.getSessionAttributes().get("username");
         if(username != null){
-            logger.info("User Disconnected: " + username);
+            if(logger.isInfoEnabled()){
+                logger.info(MessageFormat.format("User Disconnected: {0}", username));
+            }
 
-            ///TODO change feed to disconnected image
             ChatMessage chatMessage = new ChatMessage();
-//            chatMessage.setSender(username);
+            chatMessage.setType(ChatMessage.MessageType.LEAVE);
+            chatMessage.setSender(username);
 
-            messagingTemplate.convertAndSend("/topic/camera", chatMessage);
+            messagingTemplate.convertAndSend("/topic/textchat", chatMessage);
         }
     }
 }

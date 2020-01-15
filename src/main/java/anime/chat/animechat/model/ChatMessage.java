@@ -1,9 +1,40 @@
 package anime.chat.animechat.model;
 
 public class ChatMessage {
+    private MessageType type;
     private String content;
-    private String audio;
     private String sender;
+
+    public enum MessageType {
+        CHAT,
+        JOIN,
+        LEAVE,
+    }
+
+    /**
+     * Used for normal use
+     */
+    public ChatMessage(){}
+
+    /**
+     * Used in tests
+     * @param type This is the type of message it is(Chat, join or leave message)
+     * @param content This is the message that has been sent
+     * @param sender This is the name of the sender(username of user)
+     */
+    public ChatMessage(MessageType type, String content, String sender){
+        this.type = type;
+        this.content = content;
+        this.sender = sender;
+    }
+
+    public MessageType getType() {
+        return type;
+    }
+
+    public void setType(MessageType type){
+        this.type = type;
+    }
 
     public String getContent(){
         return content;
@@ -11,14 +42,6 @@ public class ChatMessage {
 
     public void setContent(String content){
         this.content = content;
-    }
-
-    public String getAudio(String audio){
-        return audio;
-    }
-
-    public void setAudio(String audio){
-        this.audio = audio;
     }
 
     public String getSender(){
