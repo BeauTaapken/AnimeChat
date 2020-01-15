@@ -11,8 +11,8 @@ addons:
  sonarcloud:
    organization: "beautaapken" # the key of the org you chose at step #
   
-# install:
-#   - "mvn -N io.takari:maven:wrapper -Dmaven=${MAVEN_VERSION}"
+install:
+  - "mvn -N io.takari:maven:wrapper -Dmaven=${MAVEN_VERSION}"
 #   - "./mvnw --show-version --errors --batch-mode test-compile dependency:go-offline"
 
 script:
