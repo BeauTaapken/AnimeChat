@@ -24,3 +24,5 @@ hs_err_pid*
 target/sonar/report-task.txt
 target/sonar/.sonar_lock
 .idea/uiDesigner.xml
+
+target/*
