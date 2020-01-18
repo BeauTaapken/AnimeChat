@@ -18,10 +18,8 @@ install:
 
 script:
  - mvn clean install sonar:sonar -Pcoverage -Dsonar.projectKey=websocket
- master:
-  - docker build -t beataapken/animechat-websocket:latest
+ - docker build -t beataapken/animechat-websocket:latest
 
-master:
- after_success:
-  - docker login -u $DOCKER_NAME -p $DOCKER_PASSWORD
-  - docker push
+after_success:
+ - docker login -u $DOCKER_NAME -p $DOCKER_PASSWORD
+ - docker push
