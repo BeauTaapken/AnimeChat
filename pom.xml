@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>anime.chat</groupId>
-    <artifactId>animechat</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>animechat</name>
-    <description>chat and search for anime on mal</description>
+    <artifactId>animechat-websocket</artifactId>
+    <version>1.0</version>
+    <name>animechat-websocket</name>
+    <description>animechat-websocket</description>
 
     <properties>
         <java.version>11</java.version>
