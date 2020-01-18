@@ -5,7 +5,7 @@ FROM openjdk:11-jdk
 VOLUME /tmp
 
 # Make port available to the world outside this container
-EXPOSE 8082
+EXPOSE 8081
 
 # The application's jar file
 ARG JAR_FILE=target/animechat-websocket-1.0.jar
