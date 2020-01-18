@@ -25,4 +25,4 @@ target/sonar/report-task.txt
 target/sonar/.sonar_lock
 .idea/uiDesigner.xml
 
-target/*
+/target/*
